@@ -149,3 +149,5 @@ router_mappings:
   - router: ubuntu-noble-router
     network: ubuntu-noble-network
     ip: 172.18.4.1
+
+groups: []
