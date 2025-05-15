@@ -77,7 +77,7 @@ routers:
       man_user: debian
     flavor: a1-2-20
 
-  - name: ubuntu-noble
+  - name: ubuntu-noble-router
     base_box:
       image: ubuntu-noble-x86_64
       man_user: ubuntu
@@ -146,6 +146,6 @@ router_mappings:
     network: debian-12
     ip: 172.18.3.1
 
-  - router: ubuntu-noble
+  - router: ubuntu-noble-router
     network: ubuntu-noble
     ip: 172.18.4.1
