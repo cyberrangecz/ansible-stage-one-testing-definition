@@ -46,7 +46,7 @@ hosts:
       man_user: ubuntu
     flavor: a2-4-35
 
-  - name: ubuntu-noble-x86_64
+  - name: ubuntu-noble
     base_box:
       image: ubuntu-noble-x86_64
       man_user: ubuntu
@@ -77,7 +77,7 @@ routers:
       man_user: debian
     flavor: a1-2-20
 
-  - name: ubuntu-noble-x86_64
+  - name: ubuntu-noble
     base_box:
       image: ubuntu-noble-x86_64
       man_user: ubuntu
@@ -125,7 +125,7 @@ net_mappings:
     network: debian-12
     ip: 172.18.3.30
 
-  - host: ubuntu-noble-x86_64
+  - host: ubuntu-noble
     network: ubuntu-noble
     ip: 172.18.4.40
 
@@ -145,3 +145,7 @@ router_mappings:
   - router: debian-12-router
     network: debian-12
     ip: 172.18.3.1
+
+  - router: ubuntu-noble
+    network: ubuntu-noble
+    ip: 172.18.4.1
