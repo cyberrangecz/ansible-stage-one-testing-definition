@@ -34,13 +34,13 @@ hosts:
       man_user: debian
     flavor: a1-2-20
 
-  - name: ubuntu-22.04
+  - name: ubuntu-2204
     base_box:
       image: ubuntu-22.04
       man_user: ubuntu
     flavor: a1-2-20
 
-  - name: xubuntu-22.04
+  - name: xubuntu-2204
     base_box:
       image: xubuntu-22.04
       man_user: ubuntu
@@ -117,11 +117,11 @@ net_mappings:
     network: debian-10
     ip: 172.18.2.20
 
-  - host: ubuntu-22.04
+  - host: ubuntu-2204
     network: debian-10
     ip: 172.18.2.21
 
-  - host: xubuntu-22.04
+  - host: xubuntu-2204
     network: debian-12
     ip: 172.18.3.30
 
