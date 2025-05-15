@@ -67,7 +67,7 @@ routers:
 
   - name: debian-10-router
     base_box:
-      image: debian-10-x86_64
+      image: debian-10
       man_user: debian
     flavor: a1-2-20
 
