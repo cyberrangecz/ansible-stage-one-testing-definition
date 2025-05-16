@@ -1,4 +1,16 @@
-- hosts: localhost
-  gather_facts: no
+- hosts: ssh_nodes
   tasks:
-  - debug:
+    - command: ping -c 4 seznam.cz
+
+- hosts: winrm_nodes
+  vars:
+    ansible_shell_type: powershell
+  tasks:
+    - win_ping:
+
+- hosts: winrm_nodes
+  vars:
+    ansible_shell_type: powershell
+    ansible_connection: ssh
+  tasks:
+    - win_shell: ping -n 4 seznam.cz
