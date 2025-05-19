@@ -1,6 +1,17 @@
 - hosts: ssh_nodes
+  become: true
   tasks:
     - command: ping -c 4 seznam.cz
+    - apt:
+        update_cache: true
+      when: ansible_os_family == "Debian"
+
+    - reboot:
+
+    - command: ping -c 4 seznam.cz
+    - apt:
+        update_cache: true
+      when: ansible_os_family == "Debian"
 
 - hosts: winrm_nodes
   vars:
@@ -14,3 +25,11 @@
     ansible_connection: ssh
   tasks:
     - win_shell: ping -n 4 seznam.cz
+    - win_reboot:
+    - win_shell: ping -n 4 seznam.cz
+
+- hosts: winrm_nodes
+  vars:
+    ansible_shell_type: powershell
+  tasks:
+    - win_ping:
