@@ -3,7 +3,7 @@
   tasks:
     - command: ping -c 4 8.8.8.8
     - command: ping -c 4 seznam.cz
-    - command: curl -s https://www.powershellgallery.com/api/v2
+    - command: curl -s https://www.powershellgallery.com/api/v2 -m 5
 
     - reboot:
 
@@ -12,7 +12,7 @@
   tasks:
     - command: ping -c 4 8.8.8.8
     - command: ping -c 4 seznam.cz
-    - command: curl -s https://www.powershellgallery.com/api/v2
+    - command: curl -s https://www.powershellgallery.com/api/v2 -m 5
 
 - hosts: winrm_nodes
   vars:
@@ -27,7 +27,7 @@
   tasks:
     - win_shell: ping -n 4 8.8.8.8
     - win_shell: ping -n 4 seznam.cz
-    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing
+    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing -TimeoutSec 5
 
     - win_reboot:
 
@@ -44,4 +44,4 @@
   tasks:
     - win_shell: ping -n 4 8.8.8.8
     - win_shell: ping -n 4 seznam.cz
-    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing
+    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing -TimeoutSec 5
