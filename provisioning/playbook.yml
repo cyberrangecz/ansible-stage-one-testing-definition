@@ -1,17 +1,18 @@
 - hosts: ssh_nodes
   become: true
   tasks:
+    - command: ping -c 4 8.8.8.8
     - command: ping -c 4 seznam.cz
-    - apt:
-        update_cache: true
-      when: ansible_os_family == "Debian"
+    - command: curl -s https://www.powershellgallery.com/api/v2
 
     - reboot:
 
+- hosts: ssh_nodes
+  become: true
+  tasks:
+    - command: ping -c 4 8.8.8.8
     - command: ping -c 4 seznam.cz
-    - apt:
-        update_cache: true
-      when: ansible_os_family == "Debian"
+    - command: curl -s https://www.powershellgallery.com/api/v2
 
 - hosts: winrm_nodes
   vars:
@@ -24,12 +25,23 @@
     ansible_shell_type: powershell
     ansible_connection: ssh
   tasks:
+    - win_shell: ping -n 4 8.8.8.8
     - win_shell: ping -n 4 seznam.cz
+    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing
+
     - win_reboot:
-    - win_shell: ping -n 4 seznam.cz
 
 - hosts: winrm_nodes
   vars:
     ansible_shell_type: powershell
   tasks:
     - win_ping:
+
+- hosts: winrm_nodes
+  vars:
+    ansible_shell_type: powershell
+    ansible_connection: ssh
+  tasks:
+    - win_shell: ping -n 4 8.8.8.8
+    - win_shell: ping -n 4 seznam.cz
+    - win_shell: iwr https://www.powershellgallery.com/api/v2 -UseBasicParsing
