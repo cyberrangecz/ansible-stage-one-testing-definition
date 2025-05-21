@@ -6,82 +6,82 @@ hosts:
       image: windows-server-2019
       man_user: windows
       mng_protocol: winrm
-    flavor: a4-8-35
+    flavor: standard.large
 
   - name: windows-10
     base_box:
       image: windows-10
       man_user: windows
       mng_protocol: winrm
-    flavor: a4-8-35
+    flavor: standard.large
 
   - name: windows-7
     base_box:
       image: windows-7
       man_user: windows
       mng_protocol: winrm
-    flavor: a4-8-35
+    flavor: standard.large
 
   - name: kali
     base_box:
       image: kali
       man_user: debian
-    flavor: a2-4-35
+    flavor: standard.medium
 
   - name: debian-10
     base_box:
       image: debian-10
       man_user: debian
-    flavor: a1-2-20
+    flavor: standard.small
 
   - name: ubuntu-2204
     base_box:
       image: ubuntu-22.04
       man_user: ubuntu
-    flavor: a1-2-20
+    flavor: standard.small
 
   - name: xubuntu-2204
     base_box:
       image: xubuntu-22.04
       man_user: ubuntu
-    flavor: a2-4-35
+    flavor: standard.medium
 
   - name: ubuntu-noble
     base_box:
       image: ubuntu-noble-x86_64
       man_user: ubuntu
-    flavor: a1-2-20
+    flavor: standard.small
 
   # - name: rocky-8
   #   base_box:
   #     image: rocky-8
   #     man_user: centors
-  #   flavor: a1-2-20
+  #   flavor: standard.small
 
 routers:
   - name: opnsense-router
     base_box:
       image: opnsense
       man_user: freebsd
-    flavor: a1-2-20
+    flavor: standard.small
 
   - name: debian-10-router
     base_box:
       image: debian-10
       man_user: debian
-    flavor: a1-2-20
+    flavor: standard.small
 
   - name: debian-12-router
     base_box:
       image: debian-12-x86_64
       man_user: debian
-    flavor: a1-2-20
+    flavor: standard.small
 
   - name: ubuntu-noble-router
     base_box:
       image: ubuntu-noble-x86_64
       man_user: ubuntu
-    flavor: a1-2-20
+    flavor: standard.small
 
 networks:
   - name: opnsense-network
