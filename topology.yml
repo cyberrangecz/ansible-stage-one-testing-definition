@@ -150,4 +150,8 @@ router_mappings:
     network: ubuntu-noble-network
     ip: 172.18.4.1
 
-groups: []
+groups:
+  - name: monitor-os
+    nodes: []
+  - name: monitor-icmp
+    nodes: []
